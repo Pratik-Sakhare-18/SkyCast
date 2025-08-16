@@ -1,0 +1,267 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.nav {
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    display: flex;
+
+    justify-content: space-around;
+    box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.1);
+}
+
+.main-logo-heading-container {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.main-logo-heading-container img {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.main-logo-heading-container p {
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.main-logo-heading-container pre {
+    font-size: 2.5em;
+    color: rgb(75, 75, 255);
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.info-container {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-direction: row;
+
+}
+
+.info-container a {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-button {
+    background-color: white;
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    &:hover {
+        box-shadow: 5px 5px 20px rgb(200, 200, 200);
+        transition: all 0.3s ease-in-out;
+        transform: translateY(-2px);
+    }
+}
+
+.theme-toggle-button i {
+    color: black;
+    font-size: 1rem;
+}
+
+#sun-icon {
+    display: block;
+}
+
+#sun-icon {
+    display: block;
+}
+
+#moon-icon {
+    display: none;
+}
+
+.login-button {
+    background-color: white;
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    &:hover {
+        box-shadow: 5px 5px 20px rgb(200, 200, 200);
+        transition: all 0.3s ease-in-out;
+        transform: translateY(-2px);
+    }
+}
+
+.deg-cel-btn-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.deg-cel-btn-switch {
+    width: 60px;
+    height: 28px;
+    background: #0c1326;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.deg-cel-btn-circle {
+    width: 26px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s ease;
+}
+
+.active .deg-cel-btn-circle {
+    left: 32px;
+}
+
+.main-content {
+    background-color: #191919;
+    height: 200px;
+    width: 200px;
+}
+
+.search-bar-container {
+    background-color: white;
+    height: 90px;
+    width: 70%;
+    margin-top: 20px;
+    margin-left: 15%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.711);
+}
+
+.search-bar-container input {
+    width: 680px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(220, 220, 220);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    margin-right:20px;
+}
+
+.search-bar-container input::placeholder {
+    color: rgb(150, 150, 150);
+    font-size: 1rem;
+    padding-left: 14px;
+}
+
+#search-button {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 1.4rem;
+    background-color: white;
+    border: none;
+
+
+
+    &:hover {
+        box-shadow: 5px 5px 20px rgb(200, 200, 200);
+        transition: all 0.3s ease-in-out;
+        transform: translateY(-2px);
+    }
+}
+
+#main-search-button {
+    height: 40px;
+    width: 130px;;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid black;
+    margin-right: 20px;
+
+
+
+
+
+    &:hover {
+        box-shadow: 5px 5px 20px rgb(200, 200, 200);
+        transition: all 0.3s ease-in-out;
+        transform: translateY(-2px);
+    }
+}
+
+#locate-me-btn {
+    height: 40px;
+    width: 130px;
+ margin-right: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.711);
+
+
+
+
+
+    &:hover {
+        box-shadow: 5px 5px 20px rgb(200, 200, 200);
+        transition: all 0.3s ease-in-out;
+        transform: translateY(-2px);
+    }
+}

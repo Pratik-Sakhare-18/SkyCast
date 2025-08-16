@@ -1,15 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sky - Cast | Weather</title>
-   <link rel="icon" type="image/x-icon" href="favicon.ico">
-   <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
+
 <body>
-    
+    <header>
+
+        <nav class="nav">
+
+            <div class="main-logo-heading-container">
+                <img src="./images/favicon.png" alt="Sky - Cast Logo">
+                <p>Sky-
+                <pre>Cast</pre>
+                </p>
+            </div>
+
+            <div class="info-container">
+                <a href="" id="about" onclick="">About</a>
+
+                <div class="deg-cel-btn-container">
+                    <span>°F</span>
+                    <div class="deg-cel-btn-switch" id="toggleBtn">
+                        <div class="deg-cel-btn-circle"></div>
+                    </div>
+                    <span>°C</span>
+                </div>
+
+                <button class="theme-toggle-button" id="theme">
+                    <i class="fa-solid fa-sun" id="sun-icon"></i>
+                    <i class="fa-regular fa-moon" id="moon-icon"></i>Theme
+                </button>
+
+                <a href="./pages/login-page.html" class="login-link">
+                    <button class="login-button" id="login">
+                        <i class="fa-solid fa-right-to-bracket"></i>Login
+                    </button>
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <div class="search-bar-container">
+
+
+        <div class="search-bar">
+            <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" id="search-input" placeholder="Login to your account while using">
+            <button id="main-search-button"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+            <button id="locate-me-btn"><i class="fa-solid fa-location-dot"></i> Locate Me</button>
+        </div>
+
+
+    </div>
 
     <script src="./script/script.js"></script>
 </body>
+
 </html>
