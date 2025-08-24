@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap');
+
+body {
+    font-family: "Mozilla Headline", sans-serif;
+}
 
 .main-container-sign-in {
     background-color: whitesmoke;
@@ -6,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin-top: 40px;
 }
 
 .sign-in-main-container {
@@ -20,6 +25,9 @@
     gap: 20px;
     overflow: hidden;
     box-shadow: 0px 5px 5px 5px #cdcdcd;
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-500px);
 }
 
 .sign-in-container1 {
@@ -41,7 +49,6 @@
 }
 
 .use-your-email-heading-div {
-
     background-color: white;
     height: 20px;
     width: 190px;
@@ -90,7 +97,7 @@ input:hover {
     cursor: pointer;
 }
 
-.sign-in-butn2 {
+.sign-in-btn {
     height: 40px;
     width: 190px;
     background: linear-gradient(to right, #e51b62, blueviolet);
@@ -101,6 +108,7 @@ input:hover {
     font-size: 1rem;
     font-family: Arial;
     cursor: pointer;
+    margin-top: 10px;
 
     &:hover {
         transform: scale(1.1);
@@ -119,7 +127,7 @@ input:hover {
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
-    gap: 20px;
+    gap: 40px;
 }
 
 .sign-in-container2 h2 {
@@ -134,8 +142,9 @@ input:hover {
     text-align: center;
     font-size: 0.9rem;
     font-weight: bold;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system;
     color: rgb(230, 228, 228);
+    line-height: 25px;
 }
 
 .your-benifit-div {
@@ -145,10 +154,12 @@ input:hover {
     border-left: 5px solid white;
     border-right: 5px solid white;
     border-radius: 10px;
-    
+    display: flex;
+    gap: 15px;
+
 }
 
-.your-benifit-div p{
+.your-benifit-div p {
     font-size: 0.8rem;
 
 }
@@ -162,13 +173,12 @@ input:hover {
 
 .your-benifit-div p {
     color: #4bb4aa;
-   
 }
 
 .sign-in-container2 i {
     color: white;
-  
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 25px;
+    font-family: system-ui, -apple-system;
 }
 
 .sign-in-container2 button {
@@ -193,12 +203,6 @@ input:hover {
     color: rgb(26, 26, 255);
 }
 
-.footer-main-div {
-    background-color: black;
-    height: 350px;
-    width: 100%;
-    border-top: 5px solid purple;
-}
 
 #message {
     color: white;
@@ -217,20 +221,16 @@ input:hover {
 /* Top message bar */
 
 #topMessage {
-    width: 15%;
-    padding: 10px;
+    padding: 15px 10px;
     text-align: center;
     font-weight: bold;
     display: none;
     position: absolute;
-    top: 100;
-    left: 500;
-    margin-left: 610px;
+    top: 650px;
+    left: 2px;
     z-index: 3;
-    background: linear-gradient(to right, blue, purple);
-    color: white;
     border-radius: 5px;
-    transition: 0.5s all ease-in;
+
 }
 
 .container {
@@ -274,4 +274,62 @@ button {
 .error {
     background-color: #f8d7da;
     color: #721c24;
+}
+
+
+/* ----------media query for 0 to 768px --------------- */
+
+@media (max-width: 768px) {
+    .main-container-sign-in {
+        padding: 20px 0;
+        height: auto;
+        margin-top: 100px;
+    }
+
+    .sign-in-main-container {
+        flex-direction: column;
+        width: 50%;
+        height: auto;
+        gap: 10;
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .your-benifit-div {
+        width: 70%;
+    }
+
+    form input {
+        width: 250px;
+    }
+
+    .sign-in-main-container {
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+        gap: 0;
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .sign-in-container1,
+    .sign-in-container2 {
+        width: auto;
+        padding: 30px 0;
+    }
+
+    .sign-in-container2 p {
+        text-align: center;
+    }
+
+}
+
+/* ---------------media query to 769 to 1100px------------- */
+
+@media (min-width: 769px) and (max-width: 1280px) {
+    .sign-in-main-container {
+        width: 90%;
+    }
 }
