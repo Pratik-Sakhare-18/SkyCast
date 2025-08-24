@@ -51,6 +51,35 @@
 
         </div>
 
+        <button class="open-btn" onclick="toggleSidebar()">☰ </button>
+
+        <div class="sidebar" id="sidebar">
+
+            <button class="open-btn" onclick="toggleSidebar()"><i class="fa-solid fa-xmark"></i> </button>
+            <a href="/index.html" id="home">Home</a>
+            <a href="./pages/about-page.html" id="about">About</a>
+
+            <div class="deg-cel-btn-container">
+                <span>°F</span>
+                <div class="deg-cel-btn-switch" id="toggleBtn">
+                    <div class="deg-cel-btn-circle"></div>
+                </div>
+                <span>°C</span>
+            </div>
+
+            <button class="theme-toggle-button" id="theme">
+                <i class="fa-solid fa-sun" id="sun-icon"></i>
+                <i class="fa-regular fa-moon" id="moon-icon"></i>Theme
+            </button>
+
+            <a href="./pages/login-page.html" class="login-link">
+                <button class="login-button" id="login">
+                    <i class="fa-solid fa-right-to-bracket"></i>Login
+                </button>
+            </a>
+
+        </div>
+
     </nav>
 
     <div id="topMessage"></div>

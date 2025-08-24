@@ -108,10 +108,17 @@ form.addEventListener("submit", (e) => {
   topMessage.style.transition = "top 0.3s ease-in-out";
 })
 
-  function homepage() {
+function homepage() {
   window.location.href = "./index.html";
 }
 
-  function aboutpage() {
+function aboutpage() {
   window.location.href = "./pages/about-page.html";
 }
+
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("active");
+}
+
+let openBtn = document.getElementById("open-btn");
+let 

@@ -135,7 +135,7 @@ input:hover {
     font-weight: bold;
     font-size: 1.6rem;
     font-family: arial black;
-    font-family: Arial, Helvetica, sans-serif;
+     font-family: "Mozilla Headline", sans-serif;
 }
 
 .sign-in-container2 p {
@@ -276,6 +276,10 @@ button {
     color: #721c24;
 }
 
+.theme-toggle-button {
+    height: auto;
+    width: auto;
+}
 
 /* ----------media query for 0 to 768px --------------- */
 
