@@ -4,55 +4,55 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.classList.toggle("active");
 });
 
-let theme = document.querySelector("#theme");
+let theme = document.getElementById("theme");
+let SearchBarContainer = document.querySelector(".search-bar-container");
 let nav = document.querySelector(".nav");
-let about = document.querySelector("#about");
-let login = document.querySelector("#login");
-let sunIcon = document.querySelector("#sun-icon");
 let moonIcon = document.querySelector("#moon-icon");
-let searchResultContainer = document.querySelector(".search-results-main-container");
-let mainContainerSignIn = document.querySelector(".main-container-sign-in");
+let sunIcon = document.querySelector("#sun-icon");
+let body = document.querySelector("#body");
+let homeLink = document.getElementById("home");
+let aboutLink = document.getElementById("about");
 let isdarktheme = true;
 theme.addEventListener("click", () => {
   if (isdarktheme) {
-    document.body.style.backgroundColor = "#191919";
-    document.body.style.transition = "background-color 0.3s ease-in-out, color 0.3s ease-in-out";
-    nav.style.backgroundColor = "#191919";
-    theme.style.backgroundColor = "#c0c0c0ff";
-    nav.style.transition = "background-color 0.3s ease-in-out";
-    login.style.backgroundColor = "#c0c0c0ff";
-    about.style.transition = "color 0.3s ease-in-out";
-    login.style.transition = "color 0.3s ease-in-out";
-    sunIcon.style.display = "none";
     moonIcon.style.display = "block";
-    searchResultContainer.style.color = "white";
-    document.body.style.color = "white";
-    mainContainerSignIn.style.backgroundColor = "#191919";
-    mainContainerSignIn.style.transition = "background-color 0.3s ease-in-out";
-    isdarktheme = false;
+    sunIcon.style.display = "none";
 
+    homeLink.style.color = "white";
+    aboutLink.style.color = "white";
+
+    body.style.backgroundColor = "black";
+    body.style.transition = "all 0.3s ease-in-out";
+
+    SearchBarContainer.style.transition = "all 0.3s ease-in-out";
+    SearchBarContainer.style.backgroundColor = "black";
+    SearchBarContainer.style.color = "white";
+
+    nav.style.backgroundColor = "black";
+    nav.style.color = "white";
+    nav.style.transition = "all 0.3s ease-in-out";
+
+    isdarktheme = false;
   } else {
-    document.body.style.backgroundColor = "white";
-    document.body.style.color = "#191919";
-    document.body.style.transition = "background-color 0.3s ease-in-out, color 0.3s ease-in-out";
-    theme.style.backgroundColor = "white";
-    about.style.transition = "color 0.3s ease-in-out";
-    login.style.transition = "color 0.3s ease-in-out";
-    login.style.backgroundColor = "white";
-    sunIcon.style.display = "block";
+
     moonIcon.style.display = "none";
-    searchResultContainer.style.backgroundColor = "white";
-    searchResultContainer.style.color = "black";
-    searchResultContainer.style.transition = "color 0.3s ease-in-out";
-    about.style.color = "black";
+    sunIcon.style.display = "block";
+
+    homeLink.style.color = "black";
+    aboutLink.style.color = "black";
+
+    body.style.backgroundColor = "white";
+    body.style.transition = "all 0.3s ease-in-out";
+
+    SearchBarContainer.style.backgroundColor = "white";
+    SearchBarContainer.style.color = "black";
+
     nav.style.backgroundColor = "white";
+    nav.style.color = "black";
+
     isdarktheme = true;
   }
 });
-
-let loginpage = () => {
-  window.location.href = "./login-page.html";
-};
 
 let userName = document.getElementById("userName");
 let password = document.getElementById("pass");
@@ -108,9 +108,10 @@ form.addEventListener("submit", (e) => {
   topMessage.style.transition = "top 0.3s ease-in-out";
 })
 
-let hoverbox = document.querySelector(".hover-box");
-hoverbox.addEventListener("mousemove", (e) => {
-  hoverbox.style.left = `${e.pageX}px`
-  hoverbox.style.top = `${e.pageY}px`
-})
+  function homepage() {
+  window.location.href = "./index.html";
+}
 
+  function aboutpage() {
+  window.location.href = "./pages/about-page.html";
+}

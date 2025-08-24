@@ -352,6 +352,7 @@ body {
 .search-results-container {
     height: 450px;
     width: 45%;
+    background-color: white;
     border-radius: 10px;
     border: 0.5px solid whitesmoke;
     box-shadow: 1px 1px 5px rgb(195, 195, 195);
@@ -1180,3 +1181,4 @@ body {
         width: 50%;
     }
 }
+
