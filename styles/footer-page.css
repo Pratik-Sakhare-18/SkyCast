@@ -14,7 +14,6 @@
 
 .footer-logo-container {
     margin-bottom: 50px;
-    background-color: red;
     height: 150px;
     width: 150px;
     border-radius: 50%;
@@ -204,7 +203,7 @@
 .footer-copyright-container button {
     padding: 8px 20px;
     border: 2px solid white;
-    border-radius: 5px;
+    border-radius:7px;
     background-color: transparent;
     font-weight: bold;
     color: white;
@@ -214,7 +213,7 @@
 
     &:hover {
         background-color: white;
-        border: 2px solid purple;
+        border: 2px solid blue;
         color: black;
         font-weight: bold;
         transition: 0.3s all ease-in-out;
