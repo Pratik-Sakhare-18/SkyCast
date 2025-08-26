@@ -7,7 +7,7 @@
     justify-content: space-evenly;
     align-items: center;
     background-color: black;
-    border-top: 5px solid #d700d7;
+    border-top: 5px solid blue;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -52,12 +52,12 @@
 .Contact-us-btn {
     height: 40px;
     width: 150px;
-    border: 2px solid #d900d9;
+    border: 2px solid blue;
     border-radius: 7px;
     background-color: transparent;
     box-shadow: 0px 1px 1px white;
     font-weight: bold;
-    color: #d900d9;
+    color: blue;
     letter-spacing: 1px;
     cursor: pointer;
 
@@ -90,7 +90,7 @@
     text-decoration: none;
 
     &:hover {
-        color: #ff5bff;
+        color: blue;
         transition: 0.3s all ease-in-out;
         transform: translateX(11px);
     }
@@ -98,7 +98,7 @@
 
 .footer-quick-links-container i {
     font-size: 1.1rem;
-    color: #ff5bff;
+    color: blue;
 }
 
 .footer-quick-links-container div {
@@ -107,7 +107,7 @@
 }
 
 .footer-underline-div {
-    background-color: #d700d7;
+    background-color: blue;
     height: 3px;
     width: 100%;
     border-radius: 5px;
@@ -130,7 +130,7 @@
 
 .footer-Contact-container i {
     font-size: 1.1rem;
-    color: #ff5bff;
+    color: #5050ff;
 }
 
 .footer-Contact-container div {
@@ -145,7 +145,7 @@
     text-decoration: none;
 
     &:hover {
-        color: #ff5bff;
+        color: blue;
         transition: 0.3s all ease-in-out;
         transform: translateX(11px);
     }
@@ -166,7 +166,7 @@
     background-color: rgba(255, 255, 255, 0.1);
 
     &:hover {
-        background-color: #e600e6;
+        background-color: blue;
         transition: 0.3s all ease-in-out;
         transform: rotate(360deg) translateY(-5px);
     }

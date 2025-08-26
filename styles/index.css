@@ -931,7 +931,7 @@ body {
 @media (max-width: 480px) {
 
     .open-btn {
-        display: block
+        display: block;
     }
 
     .nav {
