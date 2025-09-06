@@ -85,7 +85,7 @@
                 <i class="fa-solid fa-right-to-bracket"></i>Login
             </button>
         </a>
-        
+
     </div>
 
     <div class="hover-container">
@@ -101,37 +101,38 @@
 
         <div class="search-bar">
             <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <input type="text" id="search-input" placeholder="Login to your account while using">
-            <button id="main-search-button"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+            <div class="search-box">
+                 <input type="text" id="cityInput" placeholder="Enter city (e.g., London,uk)">
+            </div>
+            <button onclick="getWeather()" id="main-search-button">🔍 Search</button>
             <button id="locate-me-btn"><i class="fa-solid fa-location-dot"></i> Locate Me</button>
         </div>
 
     </div>
 
+
     <div class="search-results-main-container">
 
         <div class="search-results-container">
 
-            <div class="search-result-item-container">
-
+            <div class="search-result-item-container" id="weatherBox">
                 <div class="wheather-update-container">
                     <div class="left-container">
-                        <div class="icon">🌤️</div>
-                        <div class="temp">27°C</div>
+                        <div class="icon" id="icon">🌤️</div>
+                        <div class="temp" id="temperature">--°C</div>
                     </div>
                     <div class="right-container">
-                        <div class="location-container">📍Pune, IN</div>
-                        <div class="Partly-cloudy">Partly Cloudy<br>Feels Like 29°C</div>
+                        <div class="location-container" id="cityName"> 📍 City, In</div>
+                        <div class="Partly-cloudy" id="description">--<br>  <p>Feels Like: <span id="feelsLike">--</span> °C</p></div>
                     </div>
                 </div>
                 <div class="temperature-container">
-                    <div class="deg-cel-container">27°C</div>
-                    <div class="kp-hover-container">11 km/h</div>
-                    <div class="humidity-container">Humidity: 60%</div>
+                    <div class="deg-cel-container" id="temperature">--°C</div>
+                    <div class="kp-hover-container" id="wind">-- km/h</div>
+                    <div class="humidity-container" id="humidity">Humidity: --%</div>
                 </div>
-
             </div>
-
+    
             <div class="result-days-container">
 
                 <div class="result-days-card">
@@ -209,16 +210,16 @@
                     <div class="row">
                         <div class="icon">↑</div>
                         <div class="time-block">
-                            <div class="time">6:35 AM</div>
-                            <div class="diff">-1m 46s</div>
+                            <div class="time" id="sunrise">6:35 AM</div>
+                            <div class="diff"  id="sunset">-1m 46s</div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="icon">↓</div>
                         <div class="time-block">
-                            <div class="time">5:42 PM</div>
-                            <div class="diff">+2m 22s</div>
+                            <div class="time" id="sunrise">5:42 PM</div>
+                            <div class="diff" id="sunset">+2m 22s</div>
                         </div>
                     </div>
 
@@ -327,6 +328,36 @@
     </footer>
 
     <script src="./script/script.js"></script>
+    <script>
+        const API_KEY = "6d7f0c5384c99aacb60067a7553f9103";
+
+        async function getWeather() {
+            const city = document.getElementById("cityInput").value;
+            if (!city) return alert("Enter a city name");
+
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error("City not found");
+
+                const data = await response.json();
+
+                document.getElementById("cityName").innerText = data.name + ", " + data.sys.country;
+                document.getElementById("temperature").innerText = Math.round(data.main.temp) + " °C";
+                document.getElementById("feelsLike").innerText = Math.round(data.main.feels_like);
+                document.getElementById("humidity").innerText = data.main.humidity;
+                document.getElementById("wind").innerText = data.wind.speed;
+                let sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+                let sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
+                document.getElementById("sunrise").innerText = sunrise;
+                document.getElementById("sunset").innerText = sunset;
+
+            } catch (error) {
+                alert("Error: " + error.message);
+            }
+        }
+    </script>
 
 </body>
 

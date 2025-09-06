@@ -17,7 +17,6 @@ body {
     }
 }
 
-
 .hover-box {
     background-color: blue;
     height: 100px;
@@ -195,7 +194,7 @@ body {
     align-items: center;
     gap: 15px;
     font-size: 20px;
-      font-family: "Mozilla Headline", sans-serif;
+    font-family: "Mozilla Headline", sans-serif;
 }
 
 .deg-cel-btn-switch {
@@ -360,6 +359,7 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+   margin-left: 100px;
 }
 
 .search-result-item-container {
@@ -422,7 +422,7 @@ body {
 .location-container {
     font-size: 1.5rem;
     font-weight: 600;
-     font-family: "Mozilla Headline", sans-serif;
+    font-family: "Mozilla Headline", sans-serif;
 }
 
 .Partly-cloudy {
@@ -1116,8 +1116,8 @@ body {
         animation: none;
     }
 
-    .search-results-container{
-         width: 90%;
+    .search-results-container {
+        width: 90%;
         height: 600px;
         transform: none;
         animation: none;
@@ -1129,9 +1129,10 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;;
+        flex-wrap: wrap;
+        ;
         gap: 15px;
-       height: 90vh;
+        height: 90vh;
         transform: none;
         animation: none;
         display: flex;

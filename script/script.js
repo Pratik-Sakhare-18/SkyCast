@@ -119,6 +119,3 @@ function aboutpage() {
 function toggleSidebar() {
   document.getElementById("sidebar").classList.toggle("active");
 }
-
-let openBtn = document.getElementById("open-btn");
-let 
