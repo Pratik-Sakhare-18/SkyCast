@@ -363,7 +363,7 @@ body {
 }
 
 .search-result-item-container {
-    height: 250px;
+    height: 100%;
     width: 100%;
     display: flex;
     gap: 20px;
@@ -392,7 +392,7 @@ body {
     gap: 20px;
     color: #fff;
     height: 100%;
-    width: 60%;
+    width: 55%;
 }
 
 .left-container .temp {
@@ -410,25 +410,28 @@ body {
 
 .right-container {
     height: 100%;
-    width: 50%;
+    width: 55%;
     background-color: white;
     display: flex;
-    gap: 10px;
+    gap: 5px;
     flex-direction: column;
     justify-content: center;
-    color: #333;
+    align-items: center;
+    color: #000000;
 }
 
 .location-container {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 800;
+    text-align: center;
     font-family: "Mozilla Headline", sans-serif;
 }
 
 .Partly-cloudy {
     font-size: 1.2rem;
-    color: #444444;
+    color: #101010;
     text-align: center;
+    font-weight: 800;
     font-family: system-ui, -apple-system;
 }
 
@@ -444,7 +447,7 @@ body {
 }
 
 .deg-cel-container {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: bold;
     font-family: system-ui, -apple-system;
     background-color: white;
@@ -465,7 +468,7 @@ body {
 }
 
 .kp-hover-container {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: bold;
     font-family: system-ui, -apple-system;
     background-color: white;
@@ -520,7 +523,7 @@ body {
 }
 
 .humidity-container {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: bold;
     font-family: system-ui, -apple-system;
     background-color: white;

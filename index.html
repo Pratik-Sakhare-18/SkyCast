@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/footer-page.css">
@@ -102,7 +105,7 @@
         <div class="search-bar">
             <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
             <div class="search-box">
-                 <input type="text" id="cityInput" placeholder="Enter city (e.g., London,uk)">
+                <input type="text" id="cityInput" placeholder="Enter city (e.g., London,uk)">
             </div>
             <button onclick="getWeather()" id="main-search-button">🔍 Search</button>
             <button id="locate-me-btn"><i class="fa-solid fa-location-dot"></i> Locate Me</button>
@@ -122,18 +125,20 @@
                         <div class="temp" id="temperature">--°C</div>
                     </div>
                     <div class="right-container">
-                        <div class="location-container" id="cityName"> 📍 City, In</div>
-                        <div class="Partly-cloudy" id="description">--<br>  <p>Feels Like: <span id="feelsLike">--</span> °C</p></div>
+                        <div class="location-container" id="cityName">📍City, In</div>
+                        <div class="Partly-cloudy" id="description"><br>
+                            <p>Feels Like: <span id="feelsLike">--</span> °C</p>
+                        </div>
                     </div>
                 </div>
                 <div class="temperature-container">
-                    <div class="deg-cel-container" id="temperature">--°C</div>
-                    <div class="kp-hover-container" id="wind">-- km/h</div>
-                    <div class="humidity-container" id="humidity">Humidity: --%</div>
+                    <div class="deg-cel-container">Temperature : <p id="tempreture"> --</p> °C</div>
+                    <div class="kp-hover-container">Wind : <p id="wind"> -- </p> %</div>
+                    <div class="humidity-container">Humidity : <p id="humidity"> --</p> %</div>
                 </div>
             </div>
-    
-            <div class="result-days-container">
+
+            <!-- <div class="result-days-container">
 
                 <div class="result-days-card">
                     <div class="day">Sun</div>
@@ -177,7 +182,7 @@
                     <div class="temp">3° <span>-3°</span></div>
                 </div>
 
-            </div>
+            </div> -->
 
         </div>
 
@@ -211,7 +216,7 @@
                         <div class="icon">↑</div>
                         <div class="time-block">
                             <div class="time" id="sunrise">6:35 AM</div>
-                            <div class="diff"  id="sunset">-1m 46s</div>
+                            <div class="diff" id="sunset">-1m 46s</div>
                         </div>
                     </div>
 
@@ -268,10 +273,14 @@
     <div class="search-result-location-container">
 
         <div class="location-info-container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30115.904637388416!2d75.17808717615382!3d19.348007857453407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb69c3f6929bf5%3A0x5d0bb5a98f5f3088!2sShevgaon%2C%20Maharashtra%20414502!5e0!3m2!1sen!2sin!4v1756013688551!5m2!1sen!2sin"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <div id="map" style="height: 100%; width: 100%; border-radius: 10px;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30115.904637388416!2d75.17808717615382!3d19.348007857453407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb69c3f6929bf5%3A0x5d0bb5a98f5f3088!2sShevgaon%2C%20Maharashtra%20414502!5e0!3m2!1sen!2sin!4v1756013688551!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
         </div>
 
     </div>
@@ -328,7 +337,14 @@
     </footer>
 
     <script src="./script/script.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+    </script>
+
     <script>
+
+        let map;
         const API_KEY = "6d7f0c5384c99aacb60067a7553f9103";
 
         async function getWeather() {
@@ -339,12 +355,30 @@
 
             try {
                 const response = await fetch(url);
+
                 if (!response.ok) throw new Error("City not found");
 
                 const data = await response.json();
+                console.log(response);
+
+                const lat = data.coord.lat;
+                const lon = data.coord.lon;
+
+                if (!map) {
+                    map = L.map('map').setView([lat, lon], 11);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap contributors'
+                    }).addTo(map);
+                } else {
+                    map.setView([lat, lon], 11);
+                }
+
+                L.marker([lat, lon]).addTo(map)
+                    .bindPopup(`<b>${data.name}</b><br>${data.weather[0].description}`)
+                    .openPopup();
 
                 document.getElementById("cityName").innerText = data.name + ", " + data.sys.country;
-                document.getElementById("temperature").innerText = Math.round(data.main.temp) + " °C";
+                document.getElementById("tempreture").innerText = Math.round(data.main.temp);
                 document.getElementById("feelsLike").innerText = Math.round(data.main.feels_like);
                 document.getElementById("humidity").innerText = data.main.humidity;
                 document.getElementById("wind").innerText = data.wind.speed;
