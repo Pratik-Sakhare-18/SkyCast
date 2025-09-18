@@ -95,7 +95,6 @@
         <div class="hover-box2"></div>
     </div>
 
-
     <div class="search-bar-container">
 
         <div class="search-bar">
@@ -118,7 +117,9 @@
                 <div class="wheather-update-container">
                     <div class="left-container">
                         <div class="icon" id="icon">🌤️</div>
-                        <div class="temp" id="temperature">--°C</div>
+                        <div class="temp">
+                            <p id="tempreture">--</p>°C
+                        </div>
                     </div>
                     <div class="right-container">
                         <div class="location-container" id="cityName">📍City, In</div>
@@ -128,7 +129,7 @@
                     </div>
                 </div>
                 <div class="temperature-container">
-                    <div class="deg-cel-container">Temperature : <p id="tempreture"> --</p> °C</div>
+                    <div class="deg-cel-container">Temperature : <p id="tempreturee"> --</p> °C</div>
                     <div class="kp-hover-container">Wind : <p id="wind"> -- </p> %</div>
                     <div class="humidity-container">Humidity : <p id="humidity"> --</p> %</div>
                 </div>
@@ -290,7 +291,7 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
-    </script>
+        </script>
 
     <script>
 
@@ -306,8 +307,11 @@
             try {
                 const response = await fetch(url);
 
-                if (!response.ok) throw new Error("City not found");
-
+                if (!response.ok) {
+                    throw new Error("City not found");
+                    alert("City not found");
+                }
+                
                 const data = await response.json();
                 console.log(response);
 
@@ -329,6 +333,7 @@
 
                 document.getElementById("cityName").innerText = data.name + ", " + data.sys.country;
                 document.getElementById("tempreture").innerText = Math.round(data.main.temp);
+                document.getElementById("tempreturee").innerText = Math.round(data.main.temp);
                 document.getElementById("feelsLike").innerText = Math.round(data.main.feels_like);
                 document.getElementById("humidity").innerText = data.main.humidity;
                 document.getElementById("wind").innerText = data.wind.speed;

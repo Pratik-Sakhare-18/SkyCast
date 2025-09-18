@@ -399,6 +399,7 @@ body {
     font-size: 48px;
     font-weight: bold;
     color: white;
+    display: flex;
     font-family: system-ui, -apple-system;
     animation: fadeIn 1.5s ease-in-out;
 }
