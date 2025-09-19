@@ -36,7 +36,7 @@ body {
 }
 
 .nav {
-    background-color:white;
+    background-color: white;
     height: 80px;
     width: 100%;
     position: fixed;
@@ -250,6 +250,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 50px;
+
+
 }
 
 #search-button {
@@ -280,6 +282,15 @@ body {
     font-size: 1.2em;
     font-family: system-ui, -apple-system, BlinkMacSystemFont;
     padding-left: 5px;
+    border: 2px solid black;
+
+    &:hover {
+        box-shadow: 1px 2px 10px rgb(200, 200, 200);
+        transition: all 0.3s ease-in-out;
+        transform: translateY(-2px);
+        border: 1px solid blue;
+        outline: none;
+    }
 }
 
 .search-bar-container input::placeholder {
@@ -359,11 +370,11 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-   margin-left: px;
+    margin-left: px;
 }
 
 .search-result-item-container {
-    height:60%;
+    height: 60%;
     width: 100%;
     display: flex;
     gap: 20px;
@@ -448,8 +459,8 @@ body {
 
 /* days */
 
-.days-container{
-  
+.days-container {
+
     height: 180px;
     width: 100%;
     display: flex;
@@ -458,7 +469,7 @@ body {
     gap: 15px;
 }
 
-.day{
+.day {
     font-size: 1.1rem;
     font-weight: bold;
     font-family: system-ui, -apple-system;
@@ -473,7 +484,7 @@ body {
     gap: 5px;
     flex-direction: column;
     box-shadow: 1px 1px 3px rgb(153, 153, 153);
-    
+
 
     &:hover {
         box-shadow: 1px 1px 20px rgb(195, 195, 195);
