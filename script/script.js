@@ -12,6 +12,21 @@ let sunIcon = document.querySelector("#sun-icon");
 let body = document.querySelector("#body");
 let homeLink = document.getElementById("home");
 let aboutLink = document.getElementById("about");
+let searchRContainer = document.querySelector(".search-results-container");
+let degcontainer = document.querySelector(".deg-cel-container")
+let kpcontainer = document.querySelector(".kp-hover-container")
+let humiditycontainer = document.querySelector(".humidity-container")
+let mon = document.querySelector("#mon")
+let tue = document.querySelector("#tue")
+let wed = document.querySelector("#wed")
+let thu = document.querySelector("#thu")
+let fri = document.querySelector("#fri")
+let sat = document.querySelector("#sat")
+let sun = document.querySelector("#sun")
+let rigntcontainer = document.querySelector(".right-container")
+let des = document.querySelector(".Partly-cloudy")
+let searchbar = document.querySelector(".search-bar")
+let locatemebtn = document.querySelector("#locate-me-btn")
 let isdarktheme = true;
 theme.addEventListener("click", () => {
   if (isdarktheme) {
@@ -27,6 +42,49 @@ theme.addEventListener("click", () => {
     SearchBarContainer.style.transition = "all 0.3s ease-in-out";
     SearchBarContainer.style.backgroundColor = "black";
     SearchBarContainer.style.color = "white";
+
+    searchRContainer.style.backgroundColor = "black"
+    degcontainer.style.backgroundColor = "black"
+    degcontainer.style.color = "white";
+
+    kpcontainer.style.backgroundColor = "black"
+    kpcontainer.style.color = "white";
+
+    humiditycontainer.style.backgroundColor = "black"
+    humiditycontainer.style.color = "white";
+
+    mon.style.backgroundColor = "black"
+    mon.style.color = "white";
+
+    tue.style.backgroundColor = "black"
+    tue.style.color = "white";
+
+    wed.style.backgroundColor = "black"
+    wed.style.color = "white";
+
+    thu.style.backgroundColor = "black"
+    thu.style.color = "white";
+
+    fri.style.backgroundColor = "black"
+    fri.style.color = "white";
+
+    sat.style.backgroundColor = "black"
+    sat.style.color = "white";
+
+    sun.style.backgroundColor = "black"
+    sun.style.color = "white";
+
+    rigntcontainer.style.backgroundColor = "black"
+    rigntcontainer.style.color = "white";
+
+    des.style.backgroundColor = "black"
+    des.style.color = "white";
+
+    searchbar.style.backgroundColor = "black"
+    searchbar.style.color = "white";
+
+    locatemebtn.style.backgroundColor = "black"
+    locatemebtn.style.color = "white";
 
     nav.style.backgroundColor = "black";
     nav.style.color = "white";
@@ -49,6 +107,50 @@ theme.addEventListener("click", () => {
 
     nav.style.backgroundColor = "white";
     nav.style.color = "black";
+
+    searchRContainer.style.backgroundColor = "white"
+    degcontainer.style.backgroundColor = "white"
+    degcontainer.style.color = "black";
+
+    kpcontainer.style.backgroundColor = "white"
+    kpcontainer.style.color = "black";
+
+    humiditycontainer.style.backgroundColor = "white"
+    humiditycontainer.style.color = "black";
+
+    mon.style.backgroundColor = "white"
+    mon.style.color = "black";
+
+    tue.style.backgroundColor = "white"
+    tue.style.color = "black";
+
+    wed.style.backgroundColor = "white"
+    wed.style.color = "black";
+
+    thu.style.backgroundColor = "white"
+    thu.style.color = "black";
+
+    fri.style.backgroundColor = "white"
+    fri.style.color = "black";
+
+    sat.style.backgroundColor = "white"
+    sat.style.color = "black";
+
+    sun.style.backgroundColor = "white"
+    sun.style.color = "black";
+
+    rigntcontainer.style.backgroundColor = "white"
+    rigntcontainer.style.color = "black";
+
+    des.style.backgroundColor = "white"
+    des.style.color = "black";
+
+    searchbar.style.backgroundColor = "white"
+    searchbar.style.color = "black";
+
+    locatemebtn.style.backgroundColor = "white"
+    locatemebtn.style.color = "black";
+
 
     isdarktheme = true;
   }
@@ -81,7 +183,12 @@ form.addEventListener("submit", (e) => {
     errorcontainer.innerText = "enter a valid email"
     errorcontainer.style.color = "white"
     errorcontainer.style.backgroundColor = "red"
-  } else if (pass.length <= 8) {
+  } else if(pass == " "){
+     errorcontainer.style.display = "block"
+    errorcontainer.innerText = "Enter A Password"
+    errorcontainer.style.color = "white"
+    errorcontainer.style.backgroundColor = "red"
+  }else if (pass.length <= 8) {
     errorcontainer.style.display = "block"
     errorcontainer.innerText = "password must be greater than 8 letter"
     errorcontainer.style.color = "white"

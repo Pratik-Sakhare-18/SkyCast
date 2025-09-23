@@ -227,10 +227,10 @@ input:hover {
     display: none;
     position: absolute;
     top: 650px;
-    left: 2px;
+    left: 20px;
     z-index: 3;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 0.7rem;
 
 }
 

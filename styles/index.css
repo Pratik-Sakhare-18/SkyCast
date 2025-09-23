@@ -46,6 +46,7 @@ body {
     justify-content: space-evenly;
     gap: 100px;
     box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.1);
+    border-bottom: 1px solid white;
 }
 
 .main-logo-heading-container {
@@ -283,6 +284,7 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont;
     padding-left: 5px;
     border: 2px solid black;
+    box-shadow: 1px 1px 5px rgb(191, 191, 191);
 
     &:hover {
         box-shadow: 1px 2px 10px rgb(200, 200, 200);
@@ -310,6 +312,7 @@ body {
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid black;
+    box-shadow: 1px 1px 5px rgba(133, 133, 133, 0.711);
 
     &:hover {
         box-shadow: 5px 5px 20px rgb(200, 200, 200);
