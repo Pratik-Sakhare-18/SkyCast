@@ -154,7 +154,7 @@
 
         <div class="location-info-container">
 
-            <div  id="map" style="height: 100%; width: 100%; border-radius: 10px;">
+            <div id="map" style="height: 100%; width: 100%; border-radius: 10px;">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30115.904637388416!2d75.17808717615382!3d19.348007857453407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb69c3f6929bf5%3A0x5d0bb5a98f5f3088!2sShevgaon%2C%20Maharashtra%20414502!5e0!3m2!1sen!2sin!4v1756013688551!5m2!1sen!2sin"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -242,15 +242,15 @@
         async function getWeather() {
             const city = document.getElementById("cityInput").value;
             if (!city) return alert("Enter a city name");
-    
+
             try {
                 result = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},in&units=metric&appid=${API_KEY}`);
                 data = await result.json();
                 updateCurrentWeatherUI(data);
                 updateMap(data);
-                console.log(data);
+                updateForecastUI(await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},in&units=metric&appid=${API_KEY}`).then(res => res.json()));
             } catch (error) {
-                alert("Error: " + error.message);                
+                alert("Error: " + error.message);
             }
         }
 
@@ -262,16 +262,16 @@
             document.getElementById("humidity").innerText = data.main.humidity;
             document.getElementById("wind").innerText = data.wind.speed;
             document.getElementById("description").innerHTML = `${data.weather[0].description}<br><p>Feels Like: <span id="feelsLike">${Math.round(data.main.feels_like)}</span> °C</p>`;
-            
+
             const weatherIcon = weatherIconMap[data.weather[0].icon] || '❓';
             document.getElementById("icon").innerText = weatherIcon;
         }
 
         function updateMap(data) {
-           const lat = data.coord.lat;
-           const lon = data.coord.lon;
+            const lat = data.coord.lat;
+            const lon = data.coord.lon;
 
-           if (!map) {
+            if (!map) {
                 map = L.map('map').setView([lat, lon], 11);
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '© OpenStreetMap contributors'
@@ -283,7 +283,7 @@
 
         function updateForecastUI(data) {
             const forecastContainer = document.querySelector(".days-container");
-            forecastContainer.innerHTML = ""; 
+            forecastContainer.innerHTML = "";
 
             const dailyData = {};
 
