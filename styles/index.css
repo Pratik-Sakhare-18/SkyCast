@@ -719,298 +719,205 @@ body {
 
 @media (max-width: 480px) {
 
-    .open-btn {
-        display: block;
-    }
-
     .nav {
-        z-index: 2000;
-        height: auto;
-        gap: 20px;
-        padding: 15px 0;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .hover-box {
-        display: none;
-    }
-
-    .hover-box2 {
-        display: none;
-    }
-
-    .main-logo-heading-container {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .info-container {
-        display: none;
-    }
-
-    .search-bar-container {
-        margin-top: 150px;
-        animation: none;
-        opacity: 1;
-        transform: none;
-    }
-
-    .search-bar {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-        gap: 20px;
-        width: 90%;
-    }
-
-    .search-bar-container input {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    #main-search-button,
-    #locate-me-btn {
-        width: 50%;
-    }
-
-    .search-results-main-container,
-    .search-results-container {
-        flex-direction: column;
-        width: 90%;
-        height: auto;
-        transform: none;
-        animation: none;
-        gap: 20px;
-    }
-
-    .search-results-main-container {
-        width: 100%;
-        margin-top: 70px;
-    }
-
-    .search-result-item-container {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .wheather-update-container {
-        width: 75%;
-        height: 200px;
-        margin-top: 20px;
-    }
-
-    .temperature-container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .result-days-container {
-        height: 430px;
-        flex-wrap: wrap;
-    }
-
-    .todays-hilights-container {
-        display: flex;
-        width: 90%;
-        height: 600px;
-        transform: none;
-        animation: none;
-        gap: 30px;
-    }
-
-    .dashboard {
-        display: flex;
-        justify-content: center;
         gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .card {
-        width: 40%;
-    }
-}
-
-/*------------------- Media Query For 481px to 769px ------------------*/
-
-@media (min-width: 481px) and (max-width: 769px) {
-
-
-
-
-    .open-btn {
-        display: block
-    }
-
-    .open-btn i {
-        margin-left: 120px;
-        margin-bottom: 20px;
-    }
-
-    .open-btn {
-        margin-top: 10px;
-    }
-
-    .nav {
-        gap: 50px;
-        justify-content: space-around;
-        padding: 0 20px;
+        justify-content: space-between;
+        padding: 0 10px;
     }
 
     .main-logo-heading-container {
         width: auto;
-
     }
 
     .main-logo-heading-container p,
     .main-logo-heading-container pre {
-        font-size: 2em;
-    }
-
-    .search-bar-container {
-        height: 250px;
+        font-size: 1.8em;
     }
 
     .info-container {
         display: none;
     }
-
-    .search-bar {
-        width: 90%;
-        height: 220px;
-        gap: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    #search-input {
-        width: 70%;
-    }
-
-    .search-bar-container input {
-        width: 50%;
-    }
-
-    .search-results-main-container {
-        flex-direction: column;
-        height: 190vh;
-        gap: 30px;
-        align-items: center;
-        transform: none;
-        animation: none;
-    }
-
-    .search-results-container {
-        width: 90%;
-        height: 600px;
-        transform: none;
-        animation: none;
-    }
-
-    .todays-hilights-container,
-    .dashboard {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        ;
-        gap: 15px;
-        height: 90vh;
-        transform: none;
-        animation: none;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .search-result-item-container {
-        flex-direction: column;
-        height: auto;
-        gap: 15px;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .wheather-update-container {
-        width: 75%;
-    }
-
-    .todays-hilights-container .card {
-        width: 35%;
-        height: 150px;
-    }
-
-}
-
-/*------------------- Media Query For 769px to 950px ------------------*/
-
-@media (min-width: 770px) and (max-width: 950px) {
 
     .open-btn {
         display: block;
-        margin-top: 15px;
     }
 
+    .search-bar-container {
+        margin-top: 80px;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        height: auto;
+        width: 95%;
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    .search-bar-container input {
+        width: 100%;
+    }
+
+    #main-search-button,
+    #locate-me-btn {
+        width: 155px;
+    }
+
+    #locate-me-btn {
+        width: 150px;
+    }
+
+    #search-button {
+        display: none;
+    }
+
+    .search-results-main-container {
+        height: auto;
+        transform: none;
+        animation: none;
+        padding: 10px 0;
+    }
+
+    .search-results-container {
+        width: 95%;
+        height: auto;
+    }
+
+    .search-result-item-container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .wheather-update-container {
+        width: 90%;
+    }
+
+    .temperature-container {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .deg-cel-container,
+    .kp-hover-container,
+    .humidity-container {
+        width: 60%;
+    }
+
+    .days-container {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .day {
+        width: 100px;
+        height: 100px;
+    }
+
+    .search-result-location-container {
+        height: 60vh;
+        padding: 10px 0;
+    }
+
+    .location-info-container {
+        width: 95%;
+        height: 100%;
+    }
+}
+
+/*------------------- Media Query For 480px to 768 px------------------ */
+
+@media (min-width: 481px) and (max-width: 768px) {
     .nav {
-        gap: 100px;
-        justify-content: space-around;
+        gap: 20px;
         padding: 0 20px;
+        justify-content: space-between;
     }
 
     .info-container {
         display: none;
     }
 
-    .search-bar {
-        flex-direction: row;
-        height: 90px;
-        padding: 0;
-        gap: 10px;
+    .open-btn {
+        display: block;
     }
 
-    .search-bar-container {
-        height: 150px;
+    .search-bar {
+        width: 95%;
+        gap: 15px;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 15px 0;
     }
 
     .search-bar-container input {
-        width: 50%;
+        width: 100%;
+    }
+
+    #main-search-button,
+    #locate-me-btn {
+        width: 150px;
+    }
+
+    #search-button {
+        display: none;
     }
 
     .search-results-main-container {
-        flex-direction: column;
-        height: auto;
-        gap: 30px;
-        align-items: center;
+        transform: none;
+        animation: none;
+        height: 800px;
+
     }
 
-    .search-results-container,
-    .todays-hilights-container {
-        width: 90%;
+    .search-results-container {
+        width: 95%;
         height: auto;
     }
 
     .search-result-item-container {
-        flex-direction: row;
-        height: 250px;
+        flex-direction: column;
+        padding: 20px 0;
+        height: auto;
+        width: 100%;
     }
 
-    .todays-hilights-container {
-        height: 400px;
+    .days-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 20px 0;
+        ;
+    }
+
+    .temperature-container {
+        width: 90%;
+    }
+
+    .wheather-update-container {
+        width: 90%;
+        height: 200px;
+    }
+
+    .temperature-container {
+        margin-top: 20px;
+    }
+
+    .location-info-container {
+        width: 95%;
     }
 }
 
-/*------------------- Media Query For 950px to 1200px ------------------*/
+/*------------------- Media Query For 768px to 1300px------------------ */
 
-@media (min-width: 950px) and (max-width: 1200px) {
-
+@media (min-width: 769px) and (max-width: 1300px) {
     .nav {
-        gap: 50px;
-        justify-content: space-around;
+        gap: 20px;
         padding: 0 20px;
     }
 
@@ -1019,61 +926,23 @@ body {
     }
 
     .info-container {
-        display: flex;
         width: auto;
-        gap: 25px;
+        gap: 20px;
     }
 
     .search-bar {
-        flex-direction: row;
-        height: 90px;
-        padding: 0;
-        gap: 10px;
-    }
-
-    .search-bar-container {
-        height: 150px;
+        width: 95%;
+        gap: 50px;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 15px 0;
     }
 
     .search-bar-container input {
-        width: 50%;
+        width: 100%;
     }
 
-    .search-results-main-container {
-        flex-direction: column;
-        height: auto;
-        gap: 30px;
-        align-items: center;
-    }
-
-    .search-results-container,
-    .todays-hilights-container {
-        width: 90%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 50px;
-        height: auto;
-    }
-
-    .search-result-item-container {
-        flex-direction: row;
-        height: 250px;
-    }
-
-    .todays-hilights-container {
-        height: 400px;
-    }
-}
-
-/*------------------- Media Query 1200px to 1290px ------------------*/
-
-@media (min-width: 1200px) and (max-width: 1290px) {
-
-    .main-logo-heading-container {
-        width: auto;
-    }
-
-    .todays-hilights-container {
-        width: 50%;
+    .search-results-container {
+        width: 95%;
     }
 }

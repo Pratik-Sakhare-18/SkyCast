@@ -242,30 +242,15 @@
         async function getWeather() {
             const city = document.getElementById("cityInput").value;
             if (!city) return alert("Enter a city name");
-
-            const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
-            const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
-
+    
             try {
-               
-                const [currentWeatherResponse, forecastResponse] = await Promise.all([
-                    fetch(currentWeatherUrl),
-                    fetch(forecastUrl)
-                ]);
-
-                if (!currentWeatherResponse.ok) {
-                    throw new Error("City not found");
-                }
-
-                const currentWeatherData = await currentWeatherResponse.json();
-                const forecastData = await forecastResponse.json();
-
-                updateCurrentWeatherUI(currentWeatherData);
-                updateMap(currentWeatherData);
-                updateForecastUI(forecastData);
-
+                result = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},in&units=metric&appid=${API_KEY}`);
+                data = await result.json();
+                updateCurrentWeatherUI(data);
+                updateMap(data);
+                console.log(data);
             } catch (error) {
-                alert("Error: " + error.message);
+                alert("Error: " + error.message);                
             }
         }
 
@@ -283,10 +268,10 @@
         }
 
         function updateMap(data) {
-            const lat = data.coord.lat;
-            const lon = data.coord.lon;
+           const lat = data.coord.lat;
+           const lon = data.coord.lon;
 
-            if (!map) {
+           if (!map) {
                 map = L.map('map').setView([lat, lon], 11);
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '© OpenStreetMap contributors'

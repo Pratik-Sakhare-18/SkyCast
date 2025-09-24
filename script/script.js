@@ -4,11 +4,6 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.classList.toggle("active");
 });
 
-let theme = document.getElementById("theme");
-let SearchBarContainer = document.querySelector(".search-bar-container");
-let nav = document.querySelector(".nav");
-let moonIcon = document.querySelector("#moon-icon");
-let sunIcon = document.querySelector("#sun-icon");
 let body = document.querySelector("#body");
 let homeLink = document.getElementById("home");
 let aboutLink = document.getElementById("about");
@@ -27,133 +22,141 @@ let rigntcontainer = document.querySelector(".right-container")
 let des = document.querySelector(".Partly-cloudy")
 let searchbar = document.querySelector(".search-bar")
 let locatemebtn = document.querySelector("#locate-me-btn")
+let nav = document.querySelector(".nav");
+let SearchBarContainer = document.querySelector(".search-bar-container");
+
 let isdarktheme = true;
-theme.addEventListener("click", () => {
-  if (isdarktheme) {
-    moonIcon.style.display = "block";
-    sunIcon.style.display = "none";
 
-    homeLink.style.color = "white";
-    aboutLink.style.color = "white";
+document.querySelectorAll(".theme-toggle-button").forEach(themeBtn => {
+  themeBtn.addEventListener("click", () => {
+    const moonIcons = document.querySelectorAll("#moon-icon");
+    const sunIcons = document.querySelectorAll("#sun-icon");
 
-    body.style.backgroundColor = "black";
-    body.style.transition = "all 0.3s ease-in-out";
+    if (isdarktheme) {
+      moonIcons.forEach(icon => icon.style.display = "block");
+      sunIcons.forEach(icon => icon.style.display = "none");
 
-    SearchBarContainer.style.transition = "all 0.3s ease-in-out";
-    SearchBarContainer.style.backgroundColor = "black";
-    SearchBarContainer.style.color = "white";
+      homeLink.style.color = "white";
+      aboutLink.style.color = "white";
 
-    searchRContainer.style.backgroundColor = "black"
-    degcontainer.style.backgroundColor = "black"
-    degcontainer.style.color = "white";
+      body.style.backgroundColor = "black";
+      body.style.transition = "all 0.3s ease-in-out";
 
-    kpcontainer.style.backgroundColor = "black"
-    kpcontainer.style.color = "white";
+      SearchBarContainer.style.transition = "all 0.3s ease-in-out";
+      SearchBarContainer.style.backgroundColor = "black";
+      SearchBarContainer.style.color = "white";
 
-    humiditycontainer.style.backgroundColor = "black"
-    humiditycontainer.style.color = "white";
+      searchRContainer.style.backgroundColor = "black"
+      degcontainer.style.backgroundColor = "black"
+      degcontainer.style.color = "white";
 
-    mon.style.backgroundColor = "black"
-    mon.style.color = "white";
+      kpcontainer.style.backgroundColor = "black"
+      kpcontainer.style.color = "white";
 
-    tue.style.backgroundColor = "black"
-    tue.style.color = "white";
+      humiditycontainer.style.backgroundColor = "black"
+      humiditycontainer.style.color = "white";
 
-    wed.style.backgroundColor = "black"
-    wed.style.color = "white";
+      mon.style.backgroundColor = "black"
+      mon.style.color = "white";
 
-    thu.style.backgroundColor = "black"
-    thu.style.color = "white";
+      tue.style.backgroundColor = "black"
+      tue.style.color = "white";
 
-    fri.style.backgroundColor = "black"
-    fri.style.color = "white";
+      wed.style.backgroundColor = "black"
+      wed.style.color = "white";
 
-    sat.style.backgroundColor = "black"
-    sat.style.color = "white";
+      thu.style.backgroundColor = "black"
+      thu.style.color = "white";
 
-    sun.style.backgroundColor = "black"
-    sun.style.color = "white";
+      fri.style.backgroundColor = "black"
+      fri.style.color = "white";
 
-    rigntcontainer.style.backgroundColor = "black"
-    rigntcontainer.style.color = "white";
+      sat.style.backgroundColor = "black"
+      sat.style.color = "white";
 
-    des.style.backgroundColor = "black"
-    des.style.color = "white";
+      sun.style.backgroundColor = "black"
+      sun.style.color = "white";
 
-    searchbar.style.backgroundColor = "black"
-    searchbar.style.color = "white";
+      rigntcontainer.style.backgroundColor = "black"
+      rigntcontainer.style.color = "white";
 
-    locatemebtn.style.backgroundColor = "black"
-    locatemebtn.style.color = "white";
+      des.style.backgroundColor = "black"
+      des.style.color = "white";
 
-    nav.style.backgroundColor = "black";
-    nav.style.color = "white";
-    nav.style.transition = "all 0.3s ease-in-out";
+      searchbar.style.backgroundColor = "black"
+      searchbar.style.color = "white";
 
-    isdarktheme = false;
-  } else {
+      locatemebtn.style.backgroundColor = "black"
+      locatemebtn.style.color = "white";
 
-    moonIcon.style.display = "none";
-    sunIcon.style.display = "block";
+      nav.style.backgroundColor = "black";
+      nav.style.color = "white";
+      nav.style.transition = "all 0.3s ease-in-out";
 
-    homeLink.style.color = "black";
-    aboutLink.style.color = "black";
+      isdarktheme = false;
+    } else {
 
-    body.style.backgroundColor = "white";
-    body.style.transition = "all 0.3s ease-in-out";
+      moonIcons.forEach(icon => icon.style.display = "none");
+      sunIcons.forEach(icon => icon.style.display = "block");
 
-    SearchBarContainer.style.backgroundColor = "white";
-    SearchBarContainer.style.color = "black";
+      homeLink.style.color = "black";
+      aboutLink.style.color = "black";
 
-    nav.style.backgroundColor = "white";
-    nav.style.color = "black";
+      body.style.backgroundColor = "white";
+      body.style.transition = "all 0.3s ease-in-out";
 
-    searchRContainer.style.backgroundColor = "white"
-    degcontainer.style.backgroundColor = "white"
-    degcontainer.style.color = "black";
+      SearchBarContainer.style.backgroundColor = "white";
+      SearchBarContainer.style.color = "black";
 
-    kpcontainer.style.backgroundColor = "white"
-    kpcontainer.style.color = "black";
+      nav.style.backgroundColor = "white";
+      nav.style.color = "black";
 
-    humiditycontainer.style.backgroundColor = "white"
-    humiditycontainer.style.color = "black";
+      searchRContainer.style.backgroundColor = "white"
+      degcontainer.style.backgroundColor = "white"
+      degcontainer.style.color = "black";
 
-    mon.style.backgroundColor = "white"
-    mon.style.color = "black";
+      kpcontainer.style.backgroundColor = "white"
+      kpcontainer.style.color = "black";
 
-    tue.style.backgroundColor = "white"
-    tue.style.color = "black";
+      humiditycontainer.style.backgroundColor = "white"
+      humiditycontainer.style.color = "black";
 
-    wed.style.backgroundColor = "white"
-    wed.style.color = "black";
+      mon.style.backgroundColor = "white"
+      mon.style.color = "black";
 
-    thu.style.backgroundColor = "white"
-    thu.style.color = "black";
+      tue.style.backgroundColor = "white"
+      tue.style.color = "black";
 
-    fri.style.backgroundColor = "white"
-    fri.style.color = "black";
+      wed.style.backgroundColor = "white"
+      wed.style.color = "black";
 
-    sat.style.backgroundColor = "white"
-    sat.style.color = "black";
+      thu.style.backgroundColor = "white"
+      thu.style.color = "black";
 
-    sun.style.backgroundColor = "white"
-    sun.style.color = "black";
+      fri.style.backgroundColor = "white"
+      fri.style.color = "black";
 
-    rigntcontainer.style.backgroundColor = "white"
-    rigntcontainer.style.color = "black";
+      sat.style.backgroundColor = "white"
+      sat.style.color = "black";
 
-    des.style.backgroundColor = "white"
-    des.style.color = "black";
+      sun.style.backgroundColor = "white"
+      sun.style.color = "black";
 
-    searchbar.style.backgroundColor = "white"
-    searchbar.style.color = "black";
+      rigntcontainer.style.backgroundColor = "white"
+      rigntcontainer.style.color = "black";
 
-    locatemebtn.style.backgroundColor = "white"
-    locatemebtn.style.color = "black";
+      des.style.backgroundColor = "white"
+      des.style.color = "black";
 
+      searchbar.style.backgroundColor = "white"
+      searchbar.style.color = "black";
 
-    isdarktheme = true;
-  }
+      locatemebtn.style.backgroundColor = "white"
+      locatemebtn.style.color = "black";
+
+      isdarktheme = true;
+    }
+  });
 });
 
 let userName = document.getElementById("userName");
