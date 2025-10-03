@@ -60,11 +60,12 @@
     box-shadow: 1px 1px 5px rgb(217, 217, 217);
     border-top: 4px solid blue;
 
-    &:hover {
-        transform: translateX(10px);
-        transition: all 0.3s ease-in;
-    }
 
+
+.about-info-container:hover {
+    transform: translateX(10px);
+    transition: all 0.3s ease-in;
+}
 }
 
 .about-info-container span {
@@ -120,3 +121,101 @@
     border-radius: 5px;
     gap: 7px;
 }
+
+/* Mobile phones */
+
+@media (max-width: 600px) {
+    .about-page-main-container {
+        margin-top: 60px;
+        gap: 20px;
+    }
+
+    .main-heading-container {
+        height: 140px;
+        padding: 8px 0;
+        margin-top: 40px;
+    }
+
+    .main-heading-container h1 {
+        font-size: 1.6rem;
+    }
+
+    .main-heading-container p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .main-heading-container .ul-div {
+        width: 30%;
+        height: 4px;
+    }
+
+    .about-info-container,
+    .Key-features-container {
+        width: 95%;
+        height: auto;
+        padding: 16px;
+    }
+
+    .about-info-container span {
+        font-size: 1.3rem;
+        padding-left: 16px;
+        padding-right: 12px;
+    }
+
+    .about-info-container p {
+        font-size: 1rem;
+        padding-left: 16px;
+    }
+
+    .Key-features-container h1 {
+        font-size: 1.2rem;
+        padding-left: 16px;
+    }
+
+    .feature-item {
+        width: 100%;
+        height: auto;
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+}
+
+/* Tablets / small laptops */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .about-page-main-container {
+        margin-top: 80px;
+        gap: 24px;
+    }
+
+    .main-heading-container {
+        height: 160px;
+    }
+
+    .main-heading-container h1 {
+        font-size: 1.9rem;
+    }
+
+    .about-info-container,
+    .Key-features-container {
+        width: 90%;
+    }
+
+    .feature-item {
+        width: 80%;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .about-info-container,
+    .Key-features-container {
+        width: 60%;
+        max-width: 1100px;
+    }
+
+    .feature-item {
+        width: 500px;
+    }
+}
+
